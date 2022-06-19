@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin afterText($num) {
+    content: $num;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    font-size: 53px;
+}
+
+body {
+    background-color: #fff;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#main__wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #C0DBD9;
+    max-width: 1200px;
+    
+   
+
+    #footer {
+        background-color: #7FAFF6;
+        height: 100px;
+        margin-top: 100px;
+    }
+
+    #header {
+        background-color: #7FAFF6;
+        display: flex;
+        align-items: center;
+        padding: 30.5px 30px;
+
+        .popup__button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #A5C7F9;
+            padding: 8px 15px;
+            font-size: 20px;
+            border-radius: 5px;
+            &:hover {
+                transition: all .2s ease;
+                background-color: #b3cff8;
+            }
+        }
+
+        .modal-window {
+            position: fixed;
+            background-color: rgba(200, 200, 200, 0.75);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+          }
+          
+          .modal-window:target {
+            opacity: 1;
+            pointer-events: auto;
+          }
+          
+          .modal-window > div {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: #fff;
+            @media screen and (max-width:435px) {
+                width: 250px;
+                height: 250px;
+            }
+          }
+          
+          .modal-window header {
+            font-weight: bold;
+          }
+          
+          .modal-close {
+            line-height: 23px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: #fff;
+            font-size: 20px;
+            width: 43px;
+            height: 39px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #A5C7F9;
+            text-decoration: none;
+          }
+          
+          .modal-close:hover {
+            color: #000;
+          }
+          
+          .modal-window h1 {
+            font-size: 53px;
+            text-align: center;
+            font-weight: 400;
+          }
+    }
+
+    #main {
+        .section__1 {
+            max-width: 100%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background-color: #B3F95A;
+            display: grid;
+            grid-template: 190px 190px / 2fr 3fr 1fr;
+            justify-content: space-between;
+            gap: 15px;
+
+
+            .section__1--items {
+                background-color: #8AD191;
+            }
+
+            .items1 {
+                &::after {
+                    @include afterText('1');
+                }
+            }
+
+            .items2 {
+                &::after {
+                    @include afterText('2');
+                }
+            }
+
+            .items3 {
+                &::after {
+                    @include afterText('3');
+                }
+            }
+
+            .items4 {
+                grid-row: 2 / 3 ;
+                grid-column: 1 / 3;
+                &::after {
+                    @include afterText('4');
+                }
+            }
+
+            .items5 {
+                &::after {
+                    @include afterText('5');
+                }
+            }
+        }
+
+        .section__2 {
+            display: flex;
+            gap: 30px;
+            background-color: #88B5BF;
+            padding: 30px;
+
+            .section__2--items {
+                flex: 1 1 calc(25%);
+
+                background-color: #0D89B0;
+                height: 199px;
+            }
+
+            @media screen and (max-width: 969px) {
+                flex-wrap: wrap;
+                .section__2--items {
+                    flex: 1 1 calc(50% - 30px);
+                }
+            }
+        }
+    }
+
+}
